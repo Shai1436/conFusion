@@ -9,7 +9,7 @@
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
             <div ng-if="!showDish">
-                <h3>{{message}}</h3>
+                <h3>{{dmessage}}</h3>
             </div>
             <div class="media" ng-if="showDish">
     		    <div class="media-left media-middle">
@@ -35,21 +35,25 @@
             <h3 align="center">This Month's Promotions</h3>
         </div>
         <div class="col-xs-12 col-sm-9">
-        
-			<div class="media-left media-middle">
-            
-                <img class="media-object img-thumbnail"
-                 ng-src={{promotedDish.image}} alt="Uthappizza">
+            <div ng-if="!showPromotion">
+                <h3>{{pmessage}}</h3>
+            </div>
+            <div class="media" ng-if="showPromotion">
+    			<div class="media-left media-middle">
+                
+                    <img class="media-object img-thumbnail"
+                     ng-src={{promotedDish.image}} alt="Uthappizza">
+                    
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{promotedDish.name}}
+                     <span class="label label-danger">{{promotedDish.label}}</span>
+                     <span class="badge">{{promotedDish.price | currency}}</span></h2>
+                    <p>{{promotedDish.description}}</p>
+                    
+                </div>
                 
             </div>
-            <div class="media-body">
-                <h2 class="media-heading">{{promotedDish.name}}
-                 <span class="label label-danger">{{promotedDish.label}}</span>
-                 <span class="badge">{{promotedDish.price | currency}}</span></h2>
-                <p>{{promotedDish.description}}</p>
-                
-            </div>
-            
         </div>
     </div>
 
@@ -59,18 +63,25 @@
             <h3 align="center">Meet our Culinary Specialists</h3>
         </div>
         <div class="col-xs-12 col-sm-9 col-sm-pull-3">
-			<div class="media-left media-middle">
-                        
-                <img class="media-object img-thumbnail"
-                ng-src={{leader.image}} alt="Leader">
-                </a>
+
+            <div ng-if="!showLeader">
+                <h3>{{lmessage}}</h3>
             </div>
-            <div class="media-body">
-                <h2 class="media-heading">{{leader.name}}
-                <span class="label label-danger">{{leader.abbr}}</span>
-                <span class="badge">{{leader.designation}}</span></h2>
-                <p>{{leader.description}}</p>
-                
+
+            <div class="media" ng-if="showLeader">
+    			<div class="media-left media-middle">
+                            
+                    <img class="media-object img-thumbnail"
+                    ng-src={{leader.image}} alt="Leader">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">{{leader.name}}
+                    <span class="label label-danger">{{leader.abbr}}</span>
+                    <span class="badge">{{leader.designation}}</span></h2>
+                    <p>{{leader.description}}</p>
+                    
+                </div>
             </div>
 
         </div>
